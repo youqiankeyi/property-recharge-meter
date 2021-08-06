@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MeterInfoModel {
+public class PurchaseInfoModel {
     private String id;
 }
