@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.EeimYgdMapper">
+
+    <resultMap id="BaseResultMap" type="com.property.bluecard.propertyrechargemeter.generator.domain.EeimYgd">
+            <id property="inUserNo" column="IN_USER_NO" jdbcType="VARCHAR"/>
+            <id property="meterNum" column="METER_NUM" jdbcType="VARCHAR"/>
+            <id property="paydate" column="PAYDATE" jdbcType="VARCHAR"/>
+            <result property="mon" column="MON" jdbcType="VARCHAR"/>
+            <result property="userName" column="USER_NAME" jdbcType="VARCHAR"/>
+            <result property="symbol" column="SYMBOL" jdbcType="CHAR"/>
+            <result property="monSn" column="MON_SN" jdbcType="NUMERIC"/>
+            <result property="inSUuid" column="IN_S_UUID" jdbcType="VARCHAR"/>
+            <result property="inSRv" column="IN_S_RV" jdbcType="VARCHAR"/>
+            <result property="inFUuid" column="IN_F_UUID" jdbcType="VARCHAR"/>
+            <result property="inCheckNo" column="IN_CHECK_NO" jdbcType="VARCHAR"/>
+            <result property="inInvoiceNo" column="IN_INVOICE_NO" jdbcType="VARCHAR"/>
+            <result property="inChgOperatorId" column="IN_CHG_OPERATOR_ID" jdbcType="VARCHAR"/>
+            <result property="inMoney" column="IN_MONEY" jdbcType="NUMERIC"/>
+            <result property="inHandleMode" column="IN_HANDLE_MODE" jdbcType="CHAR"/>
+            <result property="inReceivedMode" column="IN_RECEIVED_MODE" jdbcType="VARCHAR"/>
+            <result property="inBalancedMode" column="IN_BALANCED_MODE" jdbcType="VARCHAR"/>
+            <result property="inBalancedRemark" column="IN_BALANCED_REMARK" jdbcType="VARCHAR"/>
+            <result property="inChargedType" column="IN_CHARGED_TYPE" jdbcType="VARCHAR"/>
+            <result property="outChargedFlag" column="OUT_CHARGED_FLAG" jdbcType="VARCHAR"/>
+            <result property="businessAreaCode" column="BUSINESS_AREA_CODE" jdbcType="VARCHAR"/>
+            <result property="copyMeterSectNo" column="COPY_METER_SECT_NO" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        IN_USER_NO,METER_NUM,PAYDATE,
+        MON,USER_NAME,SYMBOL,
+        MON_SN,IN_S_UUID,IN_S_RV,
+        IN_F_UUID,IN_CHECK_NO,IN_INVOICE_NO,
+        IN_CHG_OPERATOR_ID,IN_MONEY,IN_HANDLE_MODE,
+        IN_RECEIVED_MODE,IN_BALANCED_MODE,IN_BALANCED_REMARK,
+        IN_CHARGED_TYPE,OUT_CHARGED_FLAG,BUSINESS_AREA_CODE,
+        COPY_METER_SECT_NO
+    </sql>
+</mapper>
