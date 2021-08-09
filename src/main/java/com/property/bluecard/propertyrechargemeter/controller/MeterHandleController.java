@@ -10,10 +10,7 @@ import com.property.bluecard.propertyrechargemeter.model.PurchaseQuery;
 import com.property.bluecard.propertyrechargemeter.util.JacksonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +26,8 @@ public class MeterHandleController {
     @Autowired
     MeterService meterService;
 
-    @PostMapping (value = "/getTotalMeterInfo")
-    public JsonResult getTotalMeterInfo()  {
+    @GetMapping(value = "/getTotalMeterInfo")
+    public JsonResult<Integer> getTotalMeterInfo()  {
         log.info("获取表计条数，入参:{}", JacksonUtil.fromObjectToJson(null));
         List<MeterInfoModel> list = new ArrayList<>();
         int totalMeter = meterService.getTotalMeter();
