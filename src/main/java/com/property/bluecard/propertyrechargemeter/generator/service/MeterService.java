@@ -1,5 +1,6 @@
 package com.property.bluecard.propertyrechargemeter.generator.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.property.bluecard.propertyrechargemeter.generator.domain.Meter;
 import com.property.bluecard.propertyrechargemeter.model.MeterInfoModel;
@@ -23,7 +24,7 @@ public interface MeterService extends IService<Meter> {
      * @param meterInfoQuery
      * @return
      */
-    List<MeterInfoModel> getMeterInfoModelList(MeterInfoQuery meterInfoQuery);
+    IPage<MeterInfoModel> getMeterInfoModelList(MeterInfoQuery meterInfoQuery);
 
 
 }

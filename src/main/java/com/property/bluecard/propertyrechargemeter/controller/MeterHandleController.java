@@ -1,5 +1,6 @@
 package com.property.bluecard.propertyrechargemeter.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.property.bluecard.propertyrechargemeter.common.JsonResult;
 import com.property.bluecard.propertyrechargemeter.generator.service.EeimYgdService;
 import com.property.bluecard.propertyrechargemeter.generator.service.MeterService;
@@ -36,11 +37,11 @@ public class MeterHandleController {
     }
 
     @PostMapping (value = "/getMeterInfo")
-    public JsonResult<List<MeterInfoModel>> getMeterInfo(@RequestBody MeterInfoQuery meterInfoQuery)  {
+    public JsonResult<IPage<MeterInfoModel>> getMeterInfo(@RequestBody MeterInfoQuery meterInfoQuery)  {
         log.info("获取表计信息，入参:{}", JacksonUtil.fromObjectToJson(meterInfoQuery));
-        List<MeterInfoModel> list = meterService.getMeterInfoModelList(meterInfoQuery);
-        log.info("获取表计信息，出参:{}", JacksonUtil.fromObjectToJson(list));
-        return JsonResult.ok(list);
+        IPage<MeterInfoModel> page = meterService.getMeterInfoModelList(meterInfoQuery);
+        log.info("获取表计信息，出参:{}", JacksonUtil.fromObjectToJson(page));
+        return JsonResult.ok(page);
     }
 
     @PostMapping (value = "/savePurchaseInfo")

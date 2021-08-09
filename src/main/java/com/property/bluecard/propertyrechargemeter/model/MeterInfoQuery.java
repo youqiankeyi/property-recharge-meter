@@ -12,11 +12,11 @@ public class MeterInfoQuery {
     /**
      *  数据查询限制1
      */
-    private int limitFirst;
+    private int pageNum;
 
 
     /**
      *  数据查询限制2
      */
-    private int limitSecond;
+    private int pageSize;
 }
