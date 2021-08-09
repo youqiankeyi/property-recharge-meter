@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.property.bluecard.propertyrechargemeter.generator.mapper.MeterMapper">
+
+    <resultMap id="BaseResultMap" type="com.property.bluecard.propertyrechargemeter.generator.domain.Meter">
+            <id property="mId" column="M_Id" jdbcType="INTEGER"/>
+            <result property="id" column="ID" jdbcType="INTEGER"/>
+            <result property="extentCode" column="Extent_Code" jdbcType="INTEGER"/>
+            <result property="rtuId" column="RTU_ID" jdbcType="INTEGER"/>
+            <result property="sectId" column="Sect_ID" jdbcType="INTEGER"/>
+            <result property="subsectId" column="SubSect_ID" jdbcType="INTEGER"/>
+            <result property="tranId" column="Tran_ID" jdbcType="INTEGER"/>
+            <result property="userId" column="User_ID" jdbcType="VARCHAR"/>
+            <result property="userName" column="User_Name" jdbcType="VARCHAR"/>
+            <result property="userAddr" column="User_Addr" jdbcType="VARCHAR"/>
+            <result property="userPhon" column="User_Phon" jdbcType="VARCHAR"/>
+            <result property="userActn" column="User_Actn" jdbcType="VARCHAR"/>
+            <result property="bankId" column="Bank_ID" jdbcType="TINYINT"/>
+            <result property="meterNum" column="Meter_num" jdbcType="VARCHAR"/>
+            <result property="assetofnum" column="AssetofNum" jdbcType="VARCHAR"/>
+            <result property="meterId" column="Meter_ID" jdbcType="VARCHAR"/>
+            <result property="cardId" column="Card_Id" jdbcType="VARCHAR"/>
+            <result property="barcode" column="BarCode" jdbcType="VARCHAR"/>
+            <result property="basemny" column="BaseMny" jdbcType="REAL"/>
+            <result property="mtypeid" column="Mtypeid" jdbcType="TINYINT"/>
+            <result property="userType" column="User_type" jdbcType="TINYINT"/>
+            <result property="mult" column="Mult" jdbcType="INTEGER"/>
+            <result property="stopFlag" column="Stop_flag" jdbcType="BIT"/>
+            <result property="started" column="Started" jdbcType="BIT"/>
+            <result property="protocol" column="protocol" jdbcType="TINYINT"/>
+            <result property="dataType" column="Data_Type" jdbcType="TINYINT"/>
+            <result property="relayId" column="Relay_Id" jdbcType="VARCHAR"/>
+            <result property="boxNo" column="Box_No" jdbcType="INTEGER"/>
+            <result property="lineNo" column="Line_No" jdbcType="INTEGER"/>
+            <result property="phaseNo" column="Phase_No" jdbcType="TINYINT"/>
+            <result property="mmMode" column="Mm_Mode" jdbcType="INTEGER"/>
+            <result property="regTime" column="Reg_time" jdbcType="TIMESTAMP"/>
+            <result property="original" column="Original" jdbcType="REAL"/>
+            <result property="orgF" column="Org_f" jdbcType="REAL"/>
+            <result property="orgJ" column="Org_j" jdbcType="REAL"/>
+            <result property="orgP" column="Org_p" jdbcType="REAL"/>
+            <result property="orgG" column="Org_g" jdbcType="REAL"/>
+            <result property="onoff" column="OnOff" jdbcType="TINYINT"/>
+            <result property="onoffnow" column="OnOffNow" jdbcType="TINYINT"/>
+            <result property="raterange1" column="RateRange1" jdbcType="REAL"/>
+            <result property="raterange2" column="RateRange2" jdbcType="REAL"/>
+            <result property="mPwd" column="M_pwd" jdbcType="INTEGER"/>
+            <result property="mpwdLim" column="Mpwd_Lim" jdbcType="TINYINT"/>
+            <result property="pledgeNum" column="Pledge_Num" jdbcType="SMALLINT"/>
+            <result property="pledgemny" column="PledgeMny" jdbcType="SMALLINT"/>
+            <result property="alarmMoney" column="Alarm_money" jdbcType="DECIMAL"/>
+            <result property="alarmPower" column="Alarm_Power" jdbcType="FLOAT"/>
+            <result property="perPower" column="Per_power" jdbcType="FLOAT"/>
+            <result property="perMoney" column="Per_money" jdbcType="DECIMAL"/>
+            <result property="remainpwr" column="RemainPwr" jdbcType="FLOAT"/>
+            <result property="remainmy" column="RemainMy" jdbcType="DECIMAL"/>
+            <result property="payNum" column="Pay_Num" jdbcType="INTEGER"/>
+            <result property="ljbuypwr" column="LJBuyPwr" jdbcType="FLOAT"/>
+            <result property="ljbuymny" column="LJBuyMny" jdbcType="DECIMAL"/>
+            <result property="ljusepwr" column="LJUsePwr" jdbcType="FLOAT"/>
+            <result property="mLink" column="M_Link" jdbcType="INTEGER"/>
+            <result property="mReside" column="M_reside" jdbcType="INTEGER"/>
+            <result property="stamp" column="Stamp" jdbcType="TINYINT"/>
+            <result property="alarmed" column="Alarmed" jdbcType="BIT"/>
+            <result property="alarmeday" column="AlarmeDay" jdbcType="TINYINT"/>
+            <result property="clearhis" column="ClearHis" jdbcType="TINYINT"/>
+            <result property="loadNum" column="Load_Num" jdbcType="TINYINT"/>
+            <result property="loadTime" column="Load_Time" jdbcType="TIMESTAMP"/>
+            <result property="logout" column="Logout" jdbcType="BIT"/>
+            <result property="timecase" column="TimeCase" jdbcType="TINYINT"/>
+            <result property="baksting" column="bakSting" jdbcType="VARCHAR"/>
+            <result property="bakdatetime" column="bakDatetime" jdbcType="TIMESTAMP"/>
+            <result property="baksingle" column="bakSingle" jdbcType="REAL"/>
+            <result property="bakdouble" column="bakDouble" jdbcType="FLOAT"/>
+            <result property="bakinteger" column="bakInteger" jdbcType="INTEGER"/>
+            <result property="bakbool" column="bakBool" jdbcType="BIT"/>
+            <result property="starttime" column="StartTime" jdbcType="TIMESTAMP"/>
+            <result property="approval" column="Approval" jdbcType="INTEGER"/>
+            <result property="approvaltime" column="ApprovalTime" jdbcType="TIMESTAMP"/>
+            <result property="pulseAddr" column="Pulse_Addr" jdbcType="VARCHAR"/>
+            <result property="alarmMoney2" column="Alarm_money2" jdbcType="DECIMAL"/>
+            <result property="alarmPower2" column="Alarm_Power2" jdbcType="FLOAT"/>
+            <result property="phaseType" column="Phase_Type" jdbcType="INTEGER"/>
+            <result property="ladderljbuypwr" column="LadderLJBuyPwr" jdbcType="FLOAT"/>
+            <result property="ladderljbuymny" column="LadderLJBuyMny" jdbcType="DECIMAL"/>
+            <result property="repaircardNum" column="RepairCard_num" jdbcType="INTEGER"/>
+            <result property="alstarthour" column="alStartHour" jdbcType="INTEGER"/>
+            <result property="alstartmin" column="alStartMin" jdbcType="INTEGER"/>
+            <result property="alendhour" column="alEndHour" jdbcType="INTEGER"/>
+            <result property="alendmin" column="alEndMin" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        M_Id,ID,Extent_Code,
+        RTU_ID,Sect_ID,SubSect_ID,
+        Tran_ID,User_ID,User_Name,
+        User_Addr,User_Phon,User_Actn,
+        Bank_ID,Meter_num,AssetofNum,
+        Meter_ID,Card_Id,BarCode,
+        BaseMny,Mtypeid,User_type,
+        Mult,Stop_flag,Started,
+        protocol,Data_Type,Relay_Id,
+        Box_No,Line_No,Phase_No,
+        Mm_Mode,Reg_time,Original,
+        Org_f,Org_j,Org_p,
+        Org_g,OnOff,OnOffNow,
+        RateRange1,RateRange2,M_pwd,
+        Mpwd_Lim,Pledge_Num,PledgeMny,
+        Alarm_money,Alarm_Power,Per_power,
+        Per_money,RemainPwr,RemainMy,
+        Pay_Num,LJBuyPwr,LJBuyMny,
+        LJUsePwr,M_Link,M_reside,
+        Stamp,Alarmed,AlarmeDay,
+        ClearHis,Load_Num,Load_Time,
+        Logout,TimeCase,bakSting,
+        bakDatetime,bakSingle,bakDouble,
+        bakInteger,bakBool,StartTime,
+        Approval,ApprovalTime,Pulse_Addr,
+        Alarm_money2,Alarm_Power2,Phase_Type,
+        LadderLJBuyPwr,LadderLJBuyMny,RepairCard_num,
+        alStartHour,alStartMin,alEndHour,
+        alEndMin
+    </sql>
+</mapper>

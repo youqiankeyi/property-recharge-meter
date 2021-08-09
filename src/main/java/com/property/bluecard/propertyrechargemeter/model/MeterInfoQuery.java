@@ -7,16 +7,16 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PurchaseQuery {
+public class MeterInfoQuery {
 
     /**
-     *  用户编号
+     *  数据查询限制1
      */
-    private String inUserNo;
+    private int limitFirst;
 
 
     /**
-     *  购电日期
+     *  数据查询限制2
      */
-    private String paydate;
+    private int limitSecond;
 }

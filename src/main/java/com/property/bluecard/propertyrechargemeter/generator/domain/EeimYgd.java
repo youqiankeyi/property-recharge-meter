@@ -1,36 +1,38 @@
 package com.property.bluecard.propertyrechargemeter.generator.domain;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
-
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import lombok.Data;
 
 /**
  * 
  * @TableName EEIM_YGD
  */
+@TableName(value ="EEIM_YGD")
 @Data
 public class EeimYgd implements Serializable {
     /**
      * 
      */
-//    @TableId(value = "user_id",type = IdType.AUTO)
+    @TableId
     private String inUserNo;
 
     /**
-     *
+     * 
      */
-    private String meterNum;
+    private String businessAreaCode;
 
     /**
-     *
+     * 
      */
     private String paydate;
 
     /**
-     *
+     * 
      */
     private String mon;
 
@@ -42,12 +44,27 @@ public class EeimYgd implements Serializable {
     /**
      * 
      */
+    private String meterNum;
+
+    /**
+     * 
+     */
+    private BigDecimal paymoney;
+
+    /**
+     * 
+     */
+    private Integer payNum;
+
+    /**
+     * 
+     */
     private String symbol;
 
     /**
      * 
      */
-    private Integer monSn;
+    private Short monSn;
 
     /**
      * 
@@ -117,13 +134,9 @@ public class EeimYgd implements Serializable {
     /**
      * 
      */
-    private String businessAreaCode;
-
-    /**
-     * 
-     */
     private String copyMeterSectNo;
 
+    @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
     @Override
@@ -139,10 +152,13 @@ public class EeimYgd implements Serializable {
         }
         EeimYgd other = (EeimYgd) that;
         return (this.getInUserNo() == null ? other.getInUserNo() == null : this.getInUserNo().equals(other.getInUserNo()))
-            && (this.getMeterNum() == null ? other.getMeterNum() == null : this.getMeterNum().equals(other.getMeterNum()))
+            && (this.getBusinessAreaCode() == null ? other.getBusinessAreaCode() == null : this.getBusinessAreaCode().equals(other.getBusinessAreaCode()))
             && (this.getPaydate() == null ? other.getPaydate() == null : this.getPaydate().equals(other.getPaydate()))
             && (this.getMon() == null ? other.getMon() == null : this.getMon().equals(other.getMon()))
             && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()))
+            && (this.getMeterNum() == null ? other.getMeterNum() == null : this.getMeterNum().equals(other.getMeterNum()))
+            && (this.getPaymoney() == null ? other.getPaymoney() == null : this.getPaymoney().equals(other.getPaymoney()))
+            && (this.getPayNum() == null ? other.getPayNum() == null : this.getPayNum().equals(other.getPayNum()))
             && (this.getSymbol() == null ? other.getSymbol() == null : this.getSymbol().equals(other.getSymbol()))
             && (this.getMonSn() == null ? other.getMonSn() == null : this.getMonSn().equals(other.getMonSn()))
             && (this.getInSUuid() == null ? other.getInSUuid() == null : this.getInSUuid().equals(other.getInSUuid()))
@@ -158,7 +174,6 @@ public class EeimYgd implements Serializable {
             && (this.getInBalancedRemark() == null ? other.getInBalancedRemark() == null : this.getInBalancedRemark().equals(other.getInBalancedRemark()))
             && (this.getInChargedType() == null ? other.getInChargedType() == null : this.getInChargedType().equals(other.getInChargedType()))
             && (this.getOutChargedFlag() == null ? other.getOutChargedFlag() == null : this.getOutChargedFlag().equals(other.getOutChargedFlag()))
-            && (this.getBusinessAreaCode() == null ? other.getBusinessAreaCode() == null : this.getBusinessAreaCode().equals(other.getBusinessAreaCode()))
             && (this.getCopyMeterSectNo() == null ? other.getCopyMeterSectNo() == null : this.getCopyMeterSectNo().equals(other.getCopyMeterSectNo()));
     }
 
@@ -167,10 +182,13 @@ public class EeimYgd implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getInUserNo() == null) ? 0 : getInUserNo().hashCode());
-        result = prime * result + ((getMeterNum() == null) ? 0 : getMeterNum().hashCode());
+        result = prime * result + ((getBusinessAreaCode() == null) ? 0 : getBusinessAreaCode().hashCode());
         result = prime * result + ((getPaydate() == null) ? 0 : getPaydate().hashCode());
         result = prime * result + ((getMon() == null) ? 0 : getMon().hashCode());
         result = prime * result + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        result = prime * result + ((getMeterNum() == null) ? 0 : getMeterNum().hashCode());
+        result = prime * result + ((getPaymoney() == null) ? 0 : getPaymoney().hashCode());
+        result = prime * result + ((getPayNum() == null) ? 0 : getPayNum().hashCode());
         result = prime * result + ((getSymbol() == null) ? 0 : getSymbol().hashCode());
         result = prime * result + ((getMonSn() == null) ? 0 : getMonSn().hashCode());
         result = prime * result + ((getInSUuid() == null) ? 0 : getInSUuid().hashCode());
@@ -186,7 +204,6 @@ public class EeimYgd implements Serializable {
         result = prime * result + ((getInBalancedRemark() == null) ? 0 : getInBalancedRemark().hashCode());
         result = prime * result + ((getInChargedType() == null) ? 0 : getInChargedType().hashCode());
         result = prime * result + ((getOutChargedFlag() == null) ? 0 : getOutChargedFlag().hashCode());
-        result = prime * result + ((getBusinessAreaCode() == null) ? 0 : getBusinessAreaCode().hashCode());
         result = prime * result + ((getCopyMeterSectNo() == null) ? 0 : getCopyMeterSectNo().hashCode());
         return result;
     }
@@ -198,10 +215,13 @@ public class EeimYgd implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", inUserNo=").append(inUserNo);
-        sb.append(", meterNum=").append(meterNum);
+        sb.append(", businessAreaCode=").append(businessAreaCode);
         sb.append(", paydate=").append(paydate);
         sb.append(", mon=").append(mon);
         sb.append(", userName=").append(userName);
+        sb.append(", meterNum=").append(meterNum);
+        sb.append(", paymoney=").append(paymoney);
+        sb.append(", payNum=").append(payNum);
         sb.append(", symbol=").append(symbol);
         sb.append(", monSn=").append(monSn);
         sb.append(", inSUuid=").append(inSUuid);
@@ -217,7 +237,6 @@ public class EeimYgd implements Serializable {
         sb.append(", inBalancedRemark=").append(inBalancedRemark);
         sb.append(", inChargedType=").append(inChargedType);
         sb.append(", outChargedFlag=").append(outChargedFlag);
-        sb.append(", businessAreaCode=").append(businessAreaCode);
         sb.append(", copyMeterSectNo=").append(copyMeterSectNo);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
