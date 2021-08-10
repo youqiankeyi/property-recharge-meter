@@ -48,7 +48,7 @@ public class MeterHandleController {
 
     @PostMapping (value = "/queryPurchaseResult")
     public JsonResult<List<PurchaseInfoModel>> queryPurchaseResult(@RequestBody PurchaseQuery purchaseQuery)  {
-        log.info("查询购电充值结果，入参:{}", JacksonUtil.fromObjectToJson(null));
+        log.info("查询购电充值结果，入参:{}", JacksonUtil.fromObjectToJson(purchaseQuery));
         List<PurchaseInfoModel> list = eeimYgdService.queryPurchaseResult(purchaseQuery);
         log.info("查询购电充值结果，出参: {}", JacksonUtil.fromObjectToJson(list));
         return JsonResult.ok(list);

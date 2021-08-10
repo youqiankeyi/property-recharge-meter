@@ -4,19 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class PurchaseQuery {
-
     /**
-     *  用户编号
+     *  业务方关联流水号
      */
-    private String inUserNo;
+    private List<String> inFUuids;
 
-
-    /**
-     *  购电日期
-     */
-    private String paydate;
 }

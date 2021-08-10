@@ -36,13 +36,11 @@ public class EeimYgdServiceImpl extends ServiceImpl<EeimYgdMapper, EeimYgd>
     public List<PurchaseInfoModel> queryPurchaseResult(PurchaseQuery purchaseQuery) {
         List<PurchaseInfoModel> purchaseInfoModels = new ArrayList<>();
         QueryWrapper<EeimYgd> queryWrapper = new QueryWrapper<>();
-        if(StringUtils.isNotBlank(purchaseQuery.getInUserNo())){
-            queryWrapper.eq("IN_USER_NO", purchaseQuery.getInUserNo());
+
+        if(CollectionUtils.isEmpty(purchaseQuery.getInFUuids())){
+            return purchaseInfoModels;
         }
-        if(StringUtils.isNotBlank(purchaseQuery.getPaydate())){
-            //小于这个时间
-            queryWrapper.lt("PAYDATE", purchaseQuery.getPaydate());
-        }
+        queryWrapper.in("IN_F_UUID", purchaseQuery.getInFUuids());
         queryWrapper.eq("SYMBOL", 1);
         List<EeimYgd> list = this.list(queryWrapper);
         if(!CollectionUtils.isEmpty(list)){
