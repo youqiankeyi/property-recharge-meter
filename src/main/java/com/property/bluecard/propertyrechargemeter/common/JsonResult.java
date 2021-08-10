@@ -10,12 +10,22 @@ public class JsonResult<T> implements Serializable {
     public static final String OK = "ok";
     private String status;
     private String msg;
+    private long pages;
     private T data;
 
     public static <T> JsonResult<T> ok(T data) {
         JsonResult<T> result = new JsonResult();
         result.setStatus("ok");
         result.setMsg("ok");
+        result.setData(null == data ? (T) new ArrayList() : data);
+        return result;
+    }
+
+    public static <T> JsonResult<T> ok(T data, long pages) {
+        JsonResult<T> result = new JsonResult();
+        result.setStatus("ok");
+        result.setMsg("ok");
+        result.setPages(pages);
         result.setData(null == data ? (T) new ArrayList() : data);
         return result;
     }
@@ -151,6 +161,14 @@ public class JsonResult<T> implements Serializable {
 
     public String toString() {
         return "JsonResult(status=" + this.getStatus() + ", msg=" + this.getMsg() + ", data=" + this.getData() + ")";
+    }
+
+    public long getPages() {
+        return pages;
+    }
+
+    public void setPages(long pages) {
+        this.pages = pages;
     }
 }
 

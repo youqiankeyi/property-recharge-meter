@@ -6,18 +6,11 @@ import com.property.bluecard.propertyrechargemeter.generator.domain.Meter;
 import com.property.bluecard.propertyrechargemeter.model.MeterInfoModel;
 import com.property.bluecard.propertyrechargemeter.model.MeterInfoQuery;
 
-import java.util.List;
-
 /**
 *
 */
 public interface MeterService extends IService<Meter> {
 
-    /**
-     * 获取表计信息总条数
-     * @return
-     */
-    int getTotalMeter();
 
     /**
      * 获取表计信息

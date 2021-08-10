@@ -22,12 +22,6 @@ import java.util.List;
 public class MeterServiceImpl extends ServiceImpl<MeterMapper, Meter>
 implements MeterService{
 
-
-    @Override
-    public int getTotalMeter() {
-        return this.count();
-    }
-
     @Override
     public IPage<MeterInfoModel> getMeterInfoModelList(MeterInfoQuery meterInfoQuery) {
         IPage<Meter> pageQuery = new Page(meterInfoQuery.getPageNum(),meterInfoQuery.getPageSize());

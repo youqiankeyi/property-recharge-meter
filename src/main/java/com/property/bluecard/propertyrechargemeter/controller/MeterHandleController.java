@@ -27,25 +27,18 @@ public class MeterHandleController {
     @Autowired
     MeterService meterService;
 
-    @GetMapping(value = "/getTotalMeterInfo")
-    public JsonResult<Integer> getTotalMeterInfo()  {
-        log.info("获取表计条数，入参:{}", JacksonUtil.fromObjectToJson(null));
-        List<MeterInfoModel> list = new ArrayList<>();
-        int totalMeter = meterService.getTotalMeter();
-        log.info("获取表计条数，出参:{}", JacksonUtil.fromObjectToJson(totalMeter));
-        return JsonResult.ok(totalMeter);
-    }
-
     @PostMapping (value = "/getMeterInfo")
-    public JsonResult<IPage<MeterInfoModel>> getMeterInfo(@RequestBody MeterInfoQuery meterInfoQuery)  {
+    public JsonResult<List<MeterInfoModel>> getMeterInfo(@RequestBody MeterInfoQuery meterInfoQuery)  {
         log.info("获取表计信息，入参:{}", JacksonUtil.fromObjectToJson(meterInfoQuery));
-        IPage<MeterInfoModel> page = meterService.getMeterInfoModelList(meterInfoQuery);
+        IPage<MeterInfoModel> meterInfoModelList = meterService.getMeterInfoModelList(meterInfoQuery);
+        List<MeterInfoModel> page = meterInfoModelList.getRecords();
+        long pages = meterInfoModelList.getPages();
         log.info("获取表计信息，出参:{}", JacksonUtil.fromObjectToJson(page));
-        return JsonResult.ok(page);
+        return JsonResult.ok(page, pages);
     }
 
     @PostMapping (value = "/savePurchaseInfo")
-    public JsonResult savePurchaseInfo(@RequestBody PurchaseInfoModel purchaseInfoModel)  {
+    public JsonResult<Boolean> savePurchaseInfo(@RequestBody PurchaseInfoModel purchaseInfoModel)  {
         log.info("存储购电详情，入参:{}", JacksonUtil.fromObjectToJson(purchaseInfoModel));
         boolean b = eeimYgdService.savePurchaseInfo(purchaseInfoModel);
         log.info("存储购电详情，出参: {}", JacksonUtil.fromObjectToJson(b));

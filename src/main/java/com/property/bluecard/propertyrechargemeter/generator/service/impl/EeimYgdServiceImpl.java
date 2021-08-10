@@ -40,8 +40,10 @@ public class EeimYgdServiceImpl extends ServiceImpl<EeimYgdMapper, EeimYgd>
             queryWrapper.eq("IN_USER_NO", purchaseQuery.getInUserNo());
         }
         if(StringUtils.isNotBlank(purchaseQuery.getPaydate())){
-            queryWrapper.eq("PAYDATE", purchaseQuery.getPaydate());
+            //小于这个时间
+            queryWrapper.lt("PAYDATE", purchaseQuery.getPaydate());
         }
+        queryWrapper.eq("SYMBOL", 1);
         List<EeimYgd> list = this.list(queryWrapper);
         if(!CollectionUtils.isEmpty(list)){
             list.forEach(p -> {

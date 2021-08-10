@@ -7,11 +7,11 @@
     <resultMap id="BaseResultMap" type="com.property.bluecard.propertyrechargemeter.generator.domain.EeimYgd">
             <id property="inUserNo" column="IN_USER_NO" jdbcType="VARCHAR"/>
             <id property="businessAreaCode" column="BUSINESS_AREA_CODE" jdbcType="VARCHAR"/>
-            <id property="payDate" column="PAYDATE" jdbcType="VARCHAR"/>
+            <id property="paydate" column="PAYDATE" jdbcType="VARCHAR"/>
             <result property="mon" column="MON" jdbcType="VARCHAR"/>
             <result property="userName" column="USER_NAME" jdbcType="VARCHAR"/>
             <result property="meterNum" column="METER_NUM" jdbcType="VARCHAR"/>
-            <result property="payMoney" column="PayMoney" jdbcType="DECIMAL"/>
+            <result property="paymoney" column="PayMoney" jdbcType="DECIMAL"/>
             <result property="payNum" column="Pay_Num" jdbcType="INTEGER"/>
             <result property="symbol" column="SYMBOL" jdbcType="CHAR"/>
             <result property="monSn" column="MON_SN" jdbcType="SMALLINT"/>
