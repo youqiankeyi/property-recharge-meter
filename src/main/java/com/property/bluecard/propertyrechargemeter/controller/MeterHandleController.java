@@ -27,7 +27,7 @@ public class MeterHandleController {
     @Autowired
     MeterService meterService;
 
-    @PostMapping (value = "/getMeterInfo")
+    @PostMapping (value = "/getMeterInfo", headers = "X-Gaia-Api-Key=2321312321321")
     public JsonResult<List<MeterInfoModel>> getMeterInfo(@RequestBody MeterInfoQuery meterInfoQuery)  {
         log.info("获取表计信息，入参:{}", JacksonUtil.fromObjectToJson(meterInfoQuery));
         IPage<MeterInfoModel> meterInfoModelList = meterService.getMeterInfoModelList(meterInfoQuery);
@@ -37,7 +37,7 @@ public class MeterHandleController {
         return JsonResult.ok(page, pages);
     }
 
-    @PostMapping (value = "/savePurchaseInfo")
+    @PostMapping (value = "/savePurchaseInfo",headers = "X-Gaia-Api-Key=2321312321321")
     public JsonResult<Boolean> savePurchaseInfo(@RequestBody PurchaseInfoModel purchaseInfoModel)  {
         log.info("存储购电详情，入参:{}", JacksonUtil.fromObjectToJson(purchaseInfoModel));
         boolean b = eeimYgdService.savePurchaseInfo(purchaseInfoModel);
@@ -46,7 +46,7 @@ public class MeterHandleController {
     }
 
 
-    @PostMapping (value = "/queryPurchaseResult")
+    @PostMapping (value = "/queryPurchaseResult",headers = "X-Gaia-Api-Key=2321312321321")
     public JsonResult<List<PurchaseInfoModel>> queryPurchaseResult(@RequestBody PurchaseQuery purchaseQuery)  {
         log.info("查询购电充值结果，入参:{}", JacksonUtil.fromObjectToJson(purchaseQuery));
         List<PurchaseInfoModel> list = eeimYgdService.queryPurchaseResult(purchaseQuery);
