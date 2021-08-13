@@ -11,9 +11,11 @@ import com.property.bluecard.propertyrechargemeter.model.PurchaseQuery;
 import com.property.bluecard.propertyrechargemeter.util.JacksonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -52,6 +54,11 @@ public class MeterHandleController {
         List<PurchaseInfoModel> list = eeimYgdService.queryPurchaseResult(purchaseQuery);
         log.info("查询购电充值结果，出参: {}", JacksonUtil.fromObjectToJson(list));
         return JsonResult.ok(list);
+    }
+
+    @RequestMapping (value = "/test")
+    public JsonResult test()  {
+        return JsonResult.ok("Test ok!");
     }
 
 
