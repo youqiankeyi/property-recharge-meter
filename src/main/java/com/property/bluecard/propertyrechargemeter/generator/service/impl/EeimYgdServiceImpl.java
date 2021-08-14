@@ -1,5 +1,6 @@
 package com.property.bluecard.propertyrechargemeter.generator.service.impl;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -19,6 +20,7 @@ import java.util.List;
  *
  */
 @Service
+@DS("write")
 public class EeimYgdServiceImpl extends ServiceImpl<EeimYgdMapper, EeimYgd>
     implements EeimYgdService{
 
