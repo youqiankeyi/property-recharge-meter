@@ -14,31 +14,13 @@
             <result property="paymoney" column="PayMoney" jdbcType="DECIMAL"/>
             <result property="payNum" column="Pay_Num" jdbcType="INTEGER"/>
             <result property="symbol" column="SYMBOL" jdbcType="CHAR"/>
-            <result property="monSn" column="MON_SN" jdbcType="SMALLINT"/>
-            <result property="inSUuid" column="IN_S_UUID" jdbcType="VARCHAR"/>
-            <result property="inSRv" column="IN_S_RV" jdbcType="VARCHAR"/>
             <result property="inFUuid" column="IN_F_UUID" jdbcType="VARCHAR"/>
-            <result property="inCheckNo" column="IN_CHECK_NO" jdbcType="VARCHAR"/>
-            <result property="inInvoiceNo" column="IN_INVOICE_NO" jdbcType="VARCHAR"/>
-            <result property="inChgOperatorId" column="IN_CHG_OPERATOR_ID" jdbcType="VARCHAR"/>
-            <result property="inMoney" column="IN_MONEY" jdbcType="DECIMAL"/>
-            <result property="inHandleMode" column="IN_HANDLE_MODE" jdbcType="CHAR"/>
-            <result property="inReceivedMode" column="IN_RECEIVED_MODE" jdbcType="VARCHAR"/>
-            <result property="inBalancedMode" column="IN_BALANCED_MODE" jdbcType="VARCHAR"/>
-            <result property="inBalancedRemark" column="IN_BALANCED_REMARK" jdbcType="VARCHAR"/>
-            <result property="inChargedType" column="IN_CHARGED_TYPE" jdbcType="VARCHAR"/>
-            <result property="outChargedFlag" column="OUT_CHARGED_FLAG" jdbcType="VARCHAR"/>
-            <result property="copyMeterSectNo" column="COPY_METER_SECT_NO" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         IN_USER_NO,BUSINESS_AREA_CODE,PAYDATE,
         MON,USER_NAME,METER_NUM,
         PayMoney,Pay_Num,SYMBOL,
-        MON_SN,IN_S_UUID,IN_S_RV,
-        IN_F_UUID,IN_CHECK_NO,IN_INVOICE_NO,
-        IN_CHG_OPERATOR_ID,IN_MONEY,IN_HANDLE_MODE,
-        IN_RECEIVED_MODE,IN_BALANCED_MODE,IN_BALANCED_REMARK,
-        IN_CHARGED_TYPE,OUT_CHARGED_FLAG,COPY_METER_SECT_NO
+        IN_F_UUID
     </sql>
 </mapper>
