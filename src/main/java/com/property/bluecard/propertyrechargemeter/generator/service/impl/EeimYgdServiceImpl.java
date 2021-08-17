@@ -43,7 +43,11 @@ public class EeimYgdServiceImpl extends ServiceImpl<EeimYgdMapper, EeimYgd>
             return purchaseInfoModels;
         }
         queryWrapper.in("IN_F_UUID", purchaseQuery.getInFUuids());
-        queryWrapper.eq("SYMBOL", 1);
+        if (StringUtils.isNotBlank(purchaseQuery.getSymbol())) {
+            queryWrapper.eq("SYMBOL", purchaseQuery.getSymbol());
+        }else {
+            queryWrapper.eq("SYMBOL", 1);
+        }
         List<EeimYgd> list = this.list(queryWrapper);
         if(!CollectionUtils.isEmpty(list)){
             list.forEach(p -> {

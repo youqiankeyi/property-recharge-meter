@@ -11,12 +11,12 @@ spring:
       strict: false #严格匹配数据源,默认false. true未匹配到指定数据源时抛异常,false使用默认数据源
       datasource:
         read:
-          url: jdbc:sqlserver://10.15.99.238:1433;DatabaseName=南区数据库
+          url: jdbc:sqlserver://localhost:1433;DatabaseName=南区数据库
           username: longhu
           password: lh123456
           driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
         write:
-          url: jdbc:sqlserver://10.15.99.238:1433;DatabaseName=longhuPay
+          url: jdbc:sqlserver://localhost:1433;DatabaseName=longhuPay
           username: longhu
           password: lh123456
           driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver

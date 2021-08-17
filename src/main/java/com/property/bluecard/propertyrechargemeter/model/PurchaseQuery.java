@@ -15,4 +15,12 @@ public class PurchaseQuery {
      */
     private List<String> inFUuids;
 
+    /**
+     *  标志位
+     *  标志位全部默认为0
+     *  1---------接收数据成功
+     *  2---------接收数据不成功
+     */
+    private String symbol;
+
 }
