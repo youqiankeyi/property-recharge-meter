@@ -56,7 +56,7 @@ public class MeterHandleController {
         return JsonResult.ok(list);
     }
 
-    @RequestMapping (value = "/test")
+    @RequestMapping (value = "/test",headers = "X-Gaia-Api-Key=2321312321321")
     public JsonResult test()  {
         return JsonResult.ok("Test ok!");
     }
